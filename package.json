@@ -2,13 +2,13 @@
   "name": "Twitter-clone-backendbir",
   "version": "1.0.0",
   "description": "Backend du projet Twitter clone",
-  "main": "server.js",
+  "main": "app",
   "repository": "https://github.com/birego/Twitter-clone-backendbir.git",
   "author": "Christian Birego <93344052+birego@users.noreply.github.com>",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
