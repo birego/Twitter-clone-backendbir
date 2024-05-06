@@ -1,9 +1,11 @@
 import { Router } from "express";
-import twitterController from "../controller/twitter.controller.js";
-import viewUser from "../controller/user.controller.js";
+import  twitterController, { addTwitter }  from "../controller/twitter.controller.js";
+import viewUser, { viewTweetsByUsername } from "../controller/user.controller.js";
 
 
 const route = Router();
-route.get('/tweet', twitterController)
-route.get('/users', viewUser)
+route.get('/users/:username', viewTweetsByUsername)
+route.get('/tweets', twitterController)
+route.get('/user/', viewUser)
+route.post('/tweets', addTwitter)
 export default route;
