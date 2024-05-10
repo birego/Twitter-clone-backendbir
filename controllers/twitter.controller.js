@@ -1,6 +1,6 @@
 import data from "../data.js";
 
-export default function twitterController(req, res, next) {
+export default function twitterController(req, res) {
     try {
         res.json(data.tweets);
     } catch (error) {
@@ -9,17 +9,11 @@ export default function twitterController(req, res, next) {
     }
 }
 
-export function addTwitter(req, res, next) {
+export function addTwitter(req, res) {
     try {
         const newTweet = req.body;
-
-        if (!newTweet || !newTweet.text) {
-            throw new Error('Le tweet doit contenir du texte.');
-        }
-
         const id = Math.round(Math.random() * 10000).toString(); // Identifiant aléatoire
         data.tweets.push({ id, ...newTweet });
-
         res.json(data.tweets.reverse());
     } catch (error) {
         console.error(error);
