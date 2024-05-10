@@ -5,6 +5,7 @@ export default function twitterController(req, res, next) {
 
 export function addTwitter(req, res, next) {
     const newTweet = req.body;
-    data.tweets.push(newTweet);
-    res.json(data.tweets);
+    let id = Math.round(Math.random() *10000).toString();
+    data.tweets.push({id, ...newTweet});
+    res.json(data.tweets.reverse());
 }
